@@ -5,19 +5,17 @@ builtins.unicode = str
 # end unicode assignment to allow Flask Triangle to work with Python 3
 
 from flask.ext.triangle import Triangle
-import socket
+import os, socket
+from config import *
 
 app = Flask (__name__)
 Triangle(app)
-
-hostname = socket.gethostname()
-debug_hostnames = ['EastWind-Server.local',]
 
 @app.route('/')
 def default():
     if (request.args.get('debug') == '0'):
         app.debug = False
-    return render_template('default.html', is_debug='abc')
+    return render_template('default.html', is_debug=BASEDIR)
 
 if __name__ == '__main__':
     app.debug = hostname in debug_hostnames
