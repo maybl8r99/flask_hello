@@ -15,11 +15,14 @@
   Hello World. This is a Flask App.
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-4">
         Test content
       </div>
-      <div class="col-md-4">
-        Test content2
+      <div class="col-md-4 col-sm-4">
+        {{ data.name }}
+<!--
+        {{ data.config }}
+-->
       </div>
     </div>
   </div>
